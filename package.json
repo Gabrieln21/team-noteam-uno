@@ -1,0 +1,48 @@
+{
+  "name": "team-noteam-uno",
+  "version": "1.0.0",
+  "description": "Our uno game",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "concurrently --names server,frontend -c blue,green \"npm run server:dev\" \"npm run build:dev\"",
+    "server:dev": "nodemon --exec ts-node src/server/index.ts --ext js,css,ejs --ignore src/public/js",
+    "build:dev": "webpack build --mode development --watch"
+  },
+  "keywords": [],
+  "author": "Gabriel Fernandez",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/connect-livereload": "^0.6.3",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/express": "^5.0.0",
+    "@types/livereload": "^0.9.5",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.8.0",
+    "@types/webpack": "^5.28.5",
+    "concurrently": "^9.1.0",
+    "connect-livereload": "^0.6.1",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "livereload": "^0.9.3",
+    "prettier": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@types/http-errors": "^2.0.4",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^5.0.1",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7",
+    "save-dev": "^0.0.1-security"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
